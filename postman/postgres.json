@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "add3a432-5743-4f30-838d-29056825cfc5",
+		"name": "postgres",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9505241"
+	},
+	"item": [
+		{
+			"name": "CreateDB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3001/postgres/create_db?db=koren",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"postgres",
+						"create_db"
+					],
+					"query": [
+						{
+							"key": "db",
+							"value": "koren"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateTable",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"table_name\":\"koren\",\r\n    \"query\": \"(id INT PRIMARY KEY, entity VARCHAR)\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/postgres/create_table",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"postgres",
+						"create_table"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertTable",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"table_name\":\"koren\",\r\n    \"query\": \"(entity) VALUES('koren1')\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3001/postgres/insert_table",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"postgres",
+						"insert_table"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
